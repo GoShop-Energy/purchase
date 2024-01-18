@@ -1,0 +1,19 @@
+<odoo>
+	<data>
+		<record id="ks_purchase_order_form" model="ir.ui.view">
+			<field name="name">purchase.purchase.order.form</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form"/>
+			<field name="priority">99</field>
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='products']/field[@name='order_line']/tree[1]/field[@name='quantity_available_gse']" position="after">
+						<field optional="show" name="sales_per_year" string="Total Sales"/>
+						<field optional="show" name="color" widget="color_picker" string="QC"/>
+						<field optional="show" name="product_need_count" string="Qty Needed"/>
+					</xpath>
+				</data>
+			</field>
+		</record>
+	</data>
+</odoo>
